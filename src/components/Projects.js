@@ -2,32 +2,44 @@ import React from 'react'
 import {Col , Container , Tab , Row ,Nav} from 'react-bootstrap'
 import {ProjectCard} from './ProjectCard';
 import backgroundImg from "../assets/img/abstract-black-green.jpg"
-import projImg1 from "../assets/img/pexels-photo-3.jpeg"
-import projImg2 from "../assets/img/pexels-photo-4.webp"
-import projImg3 from "../assets/img/pexels-photo-6.jpeg"
+import projImg1 from "../assets/img/fightacademy.gr_-resized.png"
+import projImg2 from "../assets/img/datsarch.com_.png"
+import projImg3 from "../assets/img/geop-engineering.gr_.png"
+import projImg4 from "../assets/img/simple-top.gr.png";
+import projImg5 from "../assets/img/tonyincode.com_.png";
 import TrackVisibility from 'react-on-screen';
  function Projects() {
 
     const projects = [
         {
-            title: "Business Startup",
-            description: "Design & Development",
+            title: "fightacademy.gr",
+            description: "Design & Development / Collaboration with Simple-top.gr",
             imgUrl: projImg1,
+            projectUrl: "https://fightacademy.gr/"
         },
         {
-            title: "Business Startup",
-            description: "Design & Development",
+            title: "datsarch.com",
+            description: "Design & Development / Collaboration with Simple-top.gr",
             imgUrl: projImg2,
+            projectUrl: "https://datsarch.com/"
         },
         {
-            title: "Business Startup",
-            description: "Design & Development",
+            title: "geop-engineering.gr",
+            description: "Design & Development / Solo Project",
             imgUrl: projImg3,
+            projectUrl: "https://geop-engineering.gr/"
         },
         {
-            title: "Business Startup",
-            description: "Design & Development",
-            imgUrl: projImg1,
+            title: "Simple-top.gr",
+            description: "Design & Development / Solo Project",
+            imgUrl: projImg4,
+            projectUrl: "https://simple-top.gr/"
+        },
+        {
+            title:"tonyincode.com",
+            description: "Design & Development / Solo Project",
+            imgUrl: projImg5,
+            projectUrl: "https://tonyincode.com"
         },
 
     ]
@@ -42,19 +54,19 @@ import TrackVisibility from 'react-on-screen';
             <h2>
                 Projects
             </h2>
-            <p>Lorem Ipsum . Lorem Lorem Ipsup</p>
+            <p> From elegant and dynamic websites crafted with the power of React and the versatility of WordPress to intricate web applications pushing boundaries with React and Node.js, these projects showcase my commitment to excellence.</p>
             </div>}
             </TrackVisibility>
             <Tab.Container id="projects-tabs" defaultActiveKey="first">
             <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
             <Nav.Item>
-              <Nav.Link eventKey="first">Tab 1</Nav.Link>
+              <Nav.Link eventKey="first">Websites</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link eventKey="second">Tab 2</Nav.Link>
+              <Nav.Link eventKey="second">Web Applications</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link eventKey="third">Tab 3</Nav.Link>
+                <Nav.Link eventKey="third">Github Projects</Nav.Link>
             </Nav.Item>
           </Nav>
           <Tab.Content>
@@ -73,7 +85,13 @@ import TrackVisibility from 'react-on-screen';
             </Row>
           </Tab.Pane>
           <Tab.Pane eventKey="second">Lorem ipsum</Tab.Pane>
-          <Tab.Pane eventKey="third">Lorem ipsum</Tab.Pane> 
+          <Tab.Pane eventKey="third">
+            Official Github Profile :  
+            <a href="https://github.com/AGLoCo13" target="_blank" rel="noopener noreferrer">
+                AGLoCo13
+            </a>
+                
+          </Tab.Pane> 
            </Tab.Content>
            </Tab.Container>
             </Col>

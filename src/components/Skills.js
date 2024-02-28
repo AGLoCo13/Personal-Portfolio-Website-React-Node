@@ -36,7 +36,7 @@ function Skills() {
                         <h2>
                             Skills
                         </h2>
-                        <p>Lorem ipsum is simply dummy text of printing and typescripting industry</p>
+                        <p>BSc in Computer Science & telematics . Certified Wordpress & E-shop Creator . More than 3 years experience in Web and Application Development.</p>
                         <Carousel responsive={responsive} infinite={true} className='skill-slider'>
                             <div className='item'>
                                 <img src={meter1} alt="" />
