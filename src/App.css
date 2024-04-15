@@ -347,6 +347,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 33.33333%;
 }
 .project .nav.nav-pills .nav-link {
+  flex:1;
   background-color: transparent;
   border-radius: 0;
   padding: 17px 0;
@@ -505,6 +506,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 100%;
 }
 
+
 /************ Footer Css ************/
 .footer {
   padding: 0 0 50px 0;
@@ -631,6 +633,26 @@ img.footer-logo{
 @media only screen and (max-width:767px){
   .banner{
    background-image:none;
+  }
+  .new-email-bx {
+    display: -webkit-inline-box;
+    top:50%;
+    left: 50%;
+    transform: translate(-50% , 20%);
+  }
+  .new-email-bx input {
+    text-align: center;
+  }
+  .new-email-bx button {
+    margin-top: 30px;
+  }
+  .footer img{
+    width: 50%;
+    position: relative;
+    right: 0%;
+  }
+  .footer-logo {
+    margin-bottom: 20px;
   }
 }
 @media only screen and (min-width:769px) and (max-width:1023px){

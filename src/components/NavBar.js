@@ -43,9 +43,9 @@ function NavBar() {
         </Nav>
         <span className='navbar-text'>
             <div className="social-icon">
-                <a href="#"><img src={facebook} alt=""/></a>
-                <a href="#"><img src={instagram} alt=""/></a>
-                <a href="#"><img src={linkedIn} alt=""/></a>
+                <a href="https://www.facebook.com/antonis.georgiou.710/" target="_blank"><img src={facebook} alt=""/></a>
+                <a href="https://www.instagram.com/tony.georgioy/" target="_blank"><img src={instagram} alt=""/></a>
+                <a href="https://www.linkedin.com/in/anthony-georgiou-95b074266/" target="_blank"><img src={linkedIn} alt=""/></a>
             </div>
             <ScrollLink to="contact" smooth={true} duration={500}>
             <button className='vvd'><span>Let's Connect</span>

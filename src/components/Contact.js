@@ -26,6 +26,7 @@ function Contact() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setButtonText('Sending...');
+      try {
         let response = await fetch("http://localhost:5000/contact",{
             method: "POST",
             headers: {
@@ -36,12 +37,17 @@ function Contact() {
         setButtonText("Send");
         let result = response.json();
         setFormDetails(formInitialDetails);
-        if(result.code === 200) {
+        if(response.ok) {
             setStatus({success: true , message: 'Message sent successfully'})
         } else {
             setStatus({success: false, message:"Something went wrong , please try again later"});
         }
-    }
+        } catch (error) {
+            console.error('Error occured while sending message:' , error);
+            setStatus({success: false , message : 'Something went wrong, please try again later'})
+        }
+        setFormDetails(formInitialDetails);
+}
   return (
    <section className="contact" id="connect">
     <Container>
@@ -62,7 +68,7 @@ function Contact() {
                             <input type="text" value={formDetails.firstName} placeholder="First Name" onChange={(e) => onFormUpdate('firstName',e.target.value)}/>
                         </Col>
                         <Col sm={6} className="px-1">
-                            <input type="text" value={formDetails.firstName} placeholder="Last Name" onChange={(e) => onFormUpdate('lastName',e.target.value)}/>
+                            <input type="text" value={formDetails.lastName} placeholder="Last Name" onChange={(e) => onFormUpdate('lastName',e.target.value)}/>
                         </Col>
                         <Col sm={6} className="px-1">
                             <input type="email" value={formDetails.email} placeholder="Email Address" onChange={(e) => onFormUpdate('email',e.target.value)}/>

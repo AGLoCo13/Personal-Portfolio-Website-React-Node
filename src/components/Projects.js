@@ -7,6 +7,7 @@ import projImg2 from "../assets/img/datsarch.com_.png"
 import projImg3 from "../assets/img/geop-engineering.gr_.png"
 import projImg4 from "../assets/img/simple-top.gr.png";
 import projImg5 from "../assets/img/tonyincode.com_.png";
+import fullStackProjImg1 from "../assets/img/React_Node_expenses_app.png"
 import TrackVisibility from 'react-on-screen';
  function Projects() {
 
@@ -31,7 +32,7 @@ import TrackVisibility from 'react-on-screen';
         },
         {
             title: "Simple-top.gr",
-            description: "Design & Development / Solo Project",
+            description: "Design & Development / Solo Project - Assigned by Simple-top.gr",
             imgUrl: projImg4,
             projectUrl: "https://simple-top.gr/"
         },
@@ -41,6 +42,16 @@ import TrackVisibility from 'react-on-screen';
             imgUrl: projImg5,
             projectUrl: "https://tonyincode.com"
         },
+
+    ]
+    const webAppProjects = [
+        {
+        title: "RN-Expenses Web Application",
+        description: "Full Stack Development / Thesis Project (Not in production yet.)",
+        imgUrl: fullStackProjImg1,
+        projectUrl:"https://github.com/AGLoCo13/Node-React.js-Expenses-Application"
+
+    }
 
     ]
   return (
@@ -60,10 +71,10 @@ import TrackVisibility from 'react-on-screen';
             <Tab.Container id="projects-tabs" defaultActiveKey="first">
             <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
             <Nav.Item>
-              <Nav.Link eventKey="first">Websites</Nav.Link>
+              <Nav.Link eventKey="first">Website Projects</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link eventKey="second">Web Applications</Nav.Link>
+              <Nav.Link eventKey="second">Web Apps</Nav.Link>
             </Nav.Item>
             <Nav.Item>
                 <Nav.Link eventKey="third">Github Projects</Nav.Link>
@@ -84,7 +95,20 @@ import TrackVisibility from 'react-on-screen';
                 }
             </Row>
           </Tab.Pane>
-          <Tab.Pane eventKey="second">Lorem ipsum</Tab.Pane>
+          <Tab.Pane eventKey="second">
+                <Row>
+                    {
+                        webAppProjects.map((webAppProject,index) => {
+                            return (
+                                <ProjectCard
+                                key={index}
+                                {...webAppProject}
+                                />
+                            )
+                        })
+                    }
+                </Row>
+          </Tab.Pane>
           <Tab.Pane eventKey="third">
             Official Github Profile :  
             <a href="https://github.com/AGLoCo13" target="_blank" rel="noopener noreferrer">
