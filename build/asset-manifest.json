@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/static/css/main.79e196fc.css",
+    "main.js": "/static/js/main.2b6310da.js",
+    "static/js/787.48a05bb2.chunk.js": "/static/js/787.48a05bb2.chunk.js",
+    "static/media/geop-engineering.gr_.png": "/static/media/geop-engineering.gr_.b895057672fbb51314be.png",
+    "static/media/datsarch.com_.png": "/static/media/datsarch.com_.d470077708ce059b4de9.png",
+    "static/media/tonyincode.com_.png": "/static/media/tonyincode.com_.581bcaff822ec0f9c042.png",
+    "static/media/green-shiny-background.jpg": "/static/media/green-shiny-background.e8cdae5dde43aba042d0.jpg",
+    "static/media/fightacademy.gr_-resized.png": "/static/media/fightacademy.gr_-resized.748bf024ecbc74ccd6d1.png",
+    "static/media/simple-top.gr.png": "/static/media/simple-top.gr.f970464501c914d805dc.png",
+    "static/media/plain-black.jpg": "/static/media/plain-black.7d76adb242949b1f5a18.jpg",
+    "static/media/abstract-black-green.jpg": "/static/media/abstract-black-green.73d32aa227b25bea6e5e.jpg",
+    "static/media/logo_white.png": "/static/media/logo_white.ba915cbb2f10867e962e.png",
+    "static/media/logo-white-cropped.png": "/static/media/logo-white-cropped.408310a827c614465199.png",
+    "static/media/React_Node_expenses_app.png": "/static/media/React_Node_expenses_app.6df0465f74ad16aa1cfb.png",
+    "static/media/instagram-icon.png": "/static/media/instagram-icon.ea234a633a4bc4da4994.png",
+    "static/media/CentraNo2-Book.ttf": "/static/media/CentraNo2-Book.72c0fe58795586249b47.ttf",
+    "static/media/CentraNo2-Medium.ttf": "/static/media/CentraNo2-Medium.54d43c63229859fe26d2.ttf",
+    "static/media/CentraNo2-Bold.ttf": "/static/media/CentraNo2-Bold.b61fc644acf0c61b7549.ttf",
+    "static/media/revicons.eot": "/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/contact.svg": "/static/media/contact.aed1df63cb5ec1195ee2271248632354.svg",
+    "static/media/coder.svg": "/static/media/coder.f79294849deea3c789e95f601a2c84a4.svg",
+    "static/media/revicons.woff": "/static/media/revicons.e8746a624ed098489406.woff",
+    "static/media/meter-2-green.svg": "/static/media/meter-2-green.5bc1de2e6674c702ba1504231f63255c.svg",
+    "static/media/meter1-green.svg": "/static/media/meter1-green.992a2ae4b374423552730fb0133ac8a6.svg",
+    "static/media/meter3-green.svg": "/static/media/meter3-green.49d67c82f98a4ccb19964c75c311a162.svg",
+    "index.html": "/index.html",
+    "main.79e196fc.css.map": "/static/css/main.79e196fc.css.map",
+    "main.2b6310da.js.map": "/static/js/main.2b6310da.js.map",
+    "787.48a05bb2.chunk.js.map": "/static/js/787.48a05bb2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.79e196fc.css",
+    "static/js/main.2b6310da.js"
+  ]
+}
