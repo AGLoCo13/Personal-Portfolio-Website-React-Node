@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.79e196fc.css",
-    "main.js": "/static/js/main.2b6310da.js",
+    "main.js": "/static/js/main.287f20ba.js",
     "static/js/787.48a05bb2.chunk.js": "/static/js/787.48a05bb2.chunk.js",
     "static/media/geop-engineering.gr_.png": "/static/media/geop-engineering.gr_.b895057672fbb51314be.png",
     "static/media/datsarch.com_.png": "/static/media/datsarch.com_.d470077708ce059b4de9.png",
@@ -28,11 +28,11 @@
     "static/media/meter3-green.svg": "/static/media/meter3-green.49d67c82f98a4ccb19964c75c311a162.svg",
     "index.html": "/index.html",
     "main.79e196fc.css.map": "/static/css/main.79e196fc.css.map",
-    "main.2b6310da.js.map": "/static/js/main.2b6310da.js.map",
+    "main.287f20ba.js.map": "/static/js/main.287f20ba.js.map",
     "787.48a05bb2.chunk.js.map": "/static/js/787.48a05bb2.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.79e196fc.css",
-    "static/js/main.2b6310da.js"
+    "static/js/main.287f20ba.js"
   ]
 }
