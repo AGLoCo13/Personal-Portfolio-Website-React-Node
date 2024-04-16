@@ -28,7 +28,7 @@ function Contact() {
         e.preventDefault();
         setButtonText('Sending...');
         try {
-            const response = await axios.post('https://tonyincode.com/api/contact', formDetails, {
+            const response = await axios.post('/api/contact', formDetails, {
                 headers: {
                     'Content-Type': 'application/json;charset=utf-8',
                 },
