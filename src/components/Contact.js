@@ -27,7 +27,7 @@ function Contact() {
         e.preventDefault();
         setButtonText('Sending...');
       try {
-        let response = await fetch("https://tonyincode.com/contact",{
+        let response = await fetch("https://tonyincode.com/api/contact",{
             method: "POST",
             headers: {
                 "Content-Type": "Application/json;charset=utf-8",
