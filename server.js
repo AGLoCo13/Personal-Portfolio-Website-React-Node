@@ -10,7 +10,6 @@ app.use(cors({
   origin: process.env.CORS_ORIGIN
 }));
 app.use(express.json());
-app.use("/api", router);
 app.listen(5000, () => console.log("Server Running"));
 
 const contactEmail = nodemailer.createTransport({
@@ -32,7 +31,7 @@ contactEmail.verify((error) => {
   }
 });
 
-router.post("/contact", (req, res) => {
+app.post("/api/contact", (req, res) => {
   const name = req.body.firstName + req.body.lastName;
   const email = req.body.email;
   const message = req.body.message;
