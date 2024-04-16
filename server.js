@@ -1,8 +1,7 @@
-const express = require("express");
-const router = express.Router();
-const cors = require("cors");
-const nodemailer = require("nodemailer");
-require("dotenv").config();
+const express = require('express');
+const cors = require('cors');
+const nodemailer = require('nodemailer');
+require('dotenv').config();
 
 // server used to send  emails
 const app = express();
@@ -14,12 +13,12 @@ app.listen(5000, () => console.log("Server Running"));
 
 const contactEmail = nodemailer.createTransport({
   service: 'gmail',
-  host: "smtp.gmail.com",
-  port: 465,
-  secure : true , //true for 465 , false for other ports
+  host: 'smtp.gmail.com',
+  port: 587,
+  secure : false, //true for 465 , false for other ports
   auth: {
     user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
+    pass: process.env.EMAIL_PASS
   },
 });
 
