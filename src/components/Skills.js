@@ -36,7 +36,7 @@ function Skills() {
                         <h2>
                             Skills
                         </h2>
-                        <p>BSc in Computer Science & telematics . Certified Wordpress & E-shop Creator . More than 3 years experience in Web and Application Development.</p>
+                        <p>BSc in Computer Science & Telematics . Certified Wordpress & E-shop Creator . More than 3 years experience in Web and Application Development.</p>
                         <Carousel responsive={responsive} infinite={true} className='skill-slider'>
                             <div className='item'>
                                 <img src={meter1} alt="" />
@@ -49,10 +49,6 @@ function Skills() {
                             <div className='item'>
                                 <img src={meter3} alt="" />
                                 <h5> Logo Design</h5>
-                            </div>
-                            <div className='item'>
-                                <img src={meter1} alt="" />
-                                <h5> Web Development</h5>
                             </div>
                         </Carousel>
                     </div>

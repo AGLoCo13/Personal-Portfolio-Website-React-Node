@@ -654,11 +654,32 @@ img.footer-logo{
   .footer-logo {
     margin-bottom: 20px;
   }
+  a#projects-tabs-tab-second.nav-link {
+    height: 87px;
+    text-align: center;
+    padding-top: 30px;
+  }
 }
 @media only screen and (min-width:769px) and (max-width:1023px){
   .banner{
     background-image:none;
    }
+   
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .new-email-bx {
+    left:55%;
+    margin-right:-30px;
+    position: relative;
+    margin-left:-30px;
+   }
+}
+  /* CSS */
+  
 }
 
 /* Animations CSS */

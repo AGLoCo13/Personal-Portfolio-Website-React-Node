@@ -53,7 +53,7 @@ function Banner() {
                     {({isVisible}) =>
                     <div className= {isVisible ? "animate__animated animate__rollIn" : ""}>
                     <span className='tagline'>Welcome to my Portfolio</span>
-                    <h1>{"Hi , i'm Anthony. "}<span className="wrap">{text}</span></h1>
+                    <h1>{"Hi , i'm Anthony.  "}<span className="wrap">{text}</span></h1>
                     <p>Passionate about crafting seamless digital experiences and bringing creative visions to life. Combining technical expertise with a keen eye for design, I thrive in delivering innovative solutions for web development and design projects.</p>
                     <ScrollLink to="contact" smooth={true} duration={500}>
                     <button className='btn-2'>Let's connect! <ArrowRightCircle size={25}/></button>

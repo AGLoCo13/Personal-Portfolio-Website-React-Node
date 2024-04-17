@@ -61,7 +61,7 @@ import TrackVisibility from 'react-on-screen';
             <Col>
             <TrackVisibility>
                     {({isVisible}) =>
-                    <div className= {isVisible ? "animate__animated animate__slideInDown" : ""}>
+                    <div className= {isVisible ? "animate__animated animate__fadeIn" : ""}>
             <h2>
                 Projects
             </h2>
