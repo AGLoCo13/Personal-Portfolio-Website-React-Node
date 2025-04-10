@@ -7,6 +7,8 @@ import projImg2 from "../assets/img/datsarch.com_.png"
 import projImg3 from "../assets/img/geop-engineering.gr_.png"
 import projImg4 from "../assets/img/simple-top.gr.png";
 import projImg5 from "../assets/img/tonyincode.com_.png";
+import projImg6 from "../assets/img/alphaomega.net.gr.jpg"
+// import projImg7 from "../assets/img/"
 import fullStackProjImg1 from "../assets/img/React_Node_expenses_app.png"
 import TrackVisibility from 'react-on-screen';
  function Projects() {
@@ -42,6 +44,12 @@ import TrackVisibility from 'react-on-screen';
             imgUrl: projImg5,
             projectUrl: "https://tonyincode.com"
         },
+        {
+            title:"alphaomega.net.gr",
+            description: "Design & Development / Solo Project",
+            imgUrl: projImg6,
+            projectUrl:"https://alphaomega.net.gr"
+        }
 
     ]
     const webAppProjects = [
