@@ -20,7 +20,7 @@ function Footer(){
                         <a href="https://www.instagram.com/tony.georgioy/" target="_blank"><img src={instagram} /></a>
                         <a href="https://www.linkedin.com/in/anthony-georgiou-95b074266/" target="_blank"><img src={linkedIn} /></a>
                     </div>
-                    <p>Copyright 2024.All Rights Reserved.</p>
+                    <p>Copyright 2025.All Rights Reserved.</p>
                 </Col>
             </Row>
         </Container>

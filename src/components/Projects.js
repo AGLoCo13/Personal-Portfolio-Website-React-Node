@@ -1,17 +1,16 @@
-import React from 'react'
-import {Col , Container , Tab , Row ,Nav} from 'react-bootstrap'
-import {ProjectCard} from './ProjectCard';
+import { Col, Container, Tab, Row, Nav } from 'react-bootstrap'
+import { ProjectCard } from './ProjectCard';
 import backgroundImg from "../assets/img/abstract-black-green.jpg"
 import projImg1 from "../assets/img/fightacademy.gr_-resized.png"
 import projImg2 from "../assets/img/datsarch.com_.png"
 import projImg3 from "../assets/img/geop-engineering.gr_.png"
-import projImg4 from "../assets/img/simple-top.gr.png";
-import projImg5 from "../assets/img/tonyincode.com_.png";
+import projImg4 from "../assets/img/simple-top.gr.png"
+import projImg5 from "../assets/img/tonyincode.com_.png"
 import projImg6 from "../assets/img/alphaomega.net.gr.jpg"
-// import projImg7 from "../assets/img/"
 import fullStackProjImg1 from "../assets/img/React_Node_expenses_app.png"
-import TrackVisibility from 'react-on-screen';
- function Projects() {
+import TrackVisibility from 'react-on-screen'
+import { useState } from 'react';
+function Projects() {
 
     const projects = [
         {
@@ -39,99 +38,107 @@ import TrackVisibility from 'react-on-screen';
             projectUrl: "https://simple-top.gr/"
         },
         {
-            title:"tonyincode.com",
+            title: "tonyincode.com",
             description: "Design & Development / Solo Project",
             imgUrl: projImg5,
             projectUrl: "https://tonyincode.com"
         },
         {
-            title:"alphaomega.net.gr",
+            title: "alphaomega.net.gr",
             description: "Design & Development / Solo Project",
             imgUrl: projImg6,
-            projectUrl:"https://alphaomega.net.gr"
+            projectUrl: "https://alphaomega.net.gr"
         }
 
     ]
     const webAppProjects = [
         {
-        title: "RN-Expenses Web Application",
-        description: "Full Stack Development / Thesis Project (Not in production yet.)",
-        imgUrl: fullStackProjImg1,
-        projectUrl:"https://github.com/AGLoCo13/Node-React.js-Expenses-Application"
+            title: "RN-Expenses Web Application",
+            description: "Full Stack Development / Thesis Project (Not in production yet.)",
+            imgUrl: fullStackProjImg1,
+            projectUrl: "https://github.com/AGLoCo13/Node-React.js-Expenses-Application"
 
-    }
+        }
 
     ]
-  return (
-    <section className='project' id="projects">
-     <Container>
-        <Row>
-            <Col>
-            <TrackVisibility>
-                    {({isVisible}) =>
-                    <div className= {isVisible ? "animate__animated animate__fadeIn" : ""}>
-            <h2>
-                Projects
-            </h2>
-            <p> From elegant and dynamic websites crafted with the power of React and the versatility of WordPress to intricate web applications pushing boundaries with React and Node.js, these projects showcase my commitment to excellence.</p>
-            </div>}
-            </TrackVisibility>
-            <Tab.Container id="projects-tabs" defaultActiveKey="first">
-            <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
-            <Nav.Item>
-              <Nav.Link eventKey="first">Website Projects</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="second">Web Apps</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-                <Nav.Link eventKey="third">Github Projects</Nav.Link>
-            </Nav.Item>
-          </Nav>
-          <Tab.Content>
-          <Tab.Pane eventKey="first">
-            <Row>
-                {
-                    projects.map((project,index) => {
-                        return (
-                            <ProjectCard
-                              key={index}
-                              {...project}
-                              />
-                        )
-                    })
-                }
-            </Row>
-          </Tab.Pane>
-          <Tab.Pane eventKey="second">
+    const [hasAnimated, setHasAnimated] = useState(false);
+    return (
+        <section className='project' id="projects">
+            <Container>
                 <Row>
-                    {
-                        webAppProjects.map((webAppProject,index) => {
-                            return (
-                                <ProjectCard
-                                key={index}
-                                {...webAppProject}
-                                />
-                            )
-                        })
-                    }
+                    <Col>
+                        <TrackVisibility partialVisibility once>
+                            {({ isVisible }) => {
+                                if (isVisible && !hasAnimated) {
+                                    setHasAnimated(true);
+                                }
+                                return (
+                                    <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+                                        <h2>
+                                            Projects
+                                        </h2>
+                                        <p> From elegant and dynamic websites crafted with the power of React and the versatility of WordPress to intricate web applications pushing boundaries with React and Node.js, these projects showcase my commitment to excellence.</p>
+                                    </div>
+                                )
+                            }
+                            }
+                        </TrackVisibility>
+                        <Tab.Container id="projects-tabs" defaultActiveKey="first">
+                            <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
+                                <Nav.Item>
+                                    <Nav.Link eventKey="first">Website Projects</Nav.Link>
+                                </Nav.Item>
+                                <Nav.Item>
+                                    <Nav.Link eventKey="second">Web Apps</Nav.Link>
+                                </Nav.Item>
+                                <Nav.Item>
+                                    <Nav.Link eventKey="third">Github Projects</Nav.Link>
+                                </Nav.Item>
+                            </Nav>
+                            <Tab.Content>
+                                <Tab.Pane eventKey="first">
+                                    <Row>
+                                        {
+                                            projects.map((project, index) => {
+                                                return (
+                                                    <ProjectCard
+                                                        key={index}
+                                                        {...project}
+                                                    />
+                                                )
+                                            })
+                                        }
+                                    </Row>
+                                </Tab.Pane>
+                                <Tab.Pane eventKey="second">
+                                    <Row>
+                                        {
+                                            webAppProjects.map((webAppProject, index) => {
+                                                return (
+                                                    <ProjectCard
+                                                        key={index}
+                                                        {...webAppProject}
+                                                    />
+                                                )
+                                            })
+                                        }
+                                    </Row>
+                                </Tab.Pane>
+                                <Tab.Pane eventKey="third">
+                                    Official Github Profile :
+                                    <a href="https://github.com/AGLoCo13" target="_blank" rel="noopener noreferrer">
+                                        AGLoCo13
+                                    </a>
+
+                                </Tab.Pane>
+                            </Tab.Content>
+                        </Tab.Container>
+                    </Col>
                 </Row>
-          </Tab.Pane>
-          <Tab.Pane eventKey="third">
-            Official Github Profile :  
-            <a href="https://github.com/AGLoCo13" target="_blank" rel="noopener noreferrer">
-                AGLoCo13
-            </a>
-                
-          </Tab.Pane> 
-           </Tab.Content>
-           </Tab.Container>
-            </Col>
-        </Row>
-     </Container>
-      <img className='background-image' src={backgroundImg} />
-      </section>
-  )
+            </Container>
+            <img className='background-image' src={backgroundImg} />
+        </section>
+    )
 }
 
 export default Projects

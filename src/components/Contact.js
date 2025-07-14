@@ -46,7 +46,7 @@ function Contact() {
         }
         setFormDetails(formInitialDetails);
     };
-
+    const [hasAnimated, setHasAnimated] = useState(false);
     return (
         <section className="contact" id="connect">
             <Container>
@@ -55,12 +55,17 @@ function Contact() {
                         <img src={contactImg} alt="Contact Us" />
                     </Col>
                     <Col md={6}>
-                        <TrackVisibility>
-                            {({ isVisible }) => (
-                                <div className={isVisible ? 'animate__animated animate__tada' : ''}>
-                                    <h2>Get in Touch</h2>
-                                </div>
-                            )}
+                        <TrackVisibility partialVisibility once>
+                            {({ isVisible }) => {
+                                if (isVisible && !hasAnimated) {
+                                    setHasAnimated(true);
+                                }
+                                return (
+                                    <div className={isVisible ? 'animate__animated animate__tada' : ''}>
+                                        <h2>Get in Touch</h2>
+                                    </div>
+                                )
+                            }}
                         </TrackVisibility>
                         <form onSubmit={handleSubmit}>
                             <Row>
