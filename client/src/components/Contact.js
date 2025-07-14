@@ -16,19 +16,18 @@ function Contact() {
     const [formDetails, setFormDetails] = useState(formInitialDetails);
     const [buttonText, setButtonText] = useState('Send');
     const [status, setStatus] = useState({});
-
     const onFormUpdate = (category, value) => {
         setFormDetails({
             ...formDetails,
             [category]: value,
         });
     };
-
+    const API_BASE = process.env.REACT_APP_API_URL || '';
     const handleSubmit = async (e) => {
         e.preventDefault();
         setButtonText('Sending...');
         try {
-            const response = await axios.post('/api/contact', formDetails, {
+            const response = await axios.post(`${API_BASE}/api/contact`, formDetails, {
                 headers: {
                     'Content-Type': 'application/json;charset=utf-8',
                 },
