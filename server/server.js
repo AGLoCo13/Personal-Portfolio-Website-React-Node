@@ -8,7 +8,8 @@ const app = express();
 //Combine hardcoded & .env-based allowed origins
 const defaultOrigins = [
   'https://tonyincode.com',
-  'https://personal-portfolio-website-react-node-irwue3loy.vercel.app'
+  'https://personal-portfolio-website-react-node-irwue3loy.vercel.app',
+  ...(process.env.CORS_ORIGIN?.split(',') || [])
 ];
 const envOrigins = process.env.CORS_ORIGIN?.split(',') || [];
 const allowedOrigins = [...defaultOrigins, ...envOrigins];
