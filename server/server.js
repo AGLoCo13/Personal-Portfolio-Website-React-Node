@@ -5,18 +5,20 @@ require('dotenv').config();
 
 const app = express();
 
-// ✅ Single place for all allowed origins
-const allowedOrigins = [
+//Combine hardcoded & .env-based allowed origins
+const defaultOrigins = [
   'https://tonyincode.com',
-  'https://personal-portfolio-website-react-node-irwue3loy.vercel.app',
-  ...(process.env.CORS_ORIGIN?.split(',') || [])
+  'https://personal-portfolio-website-react-node-irwue3loy.vercel.app'
 ];
+const envOrigins = process.env.CORS_ORIGIN?.split(',') || [];
+const allowedOrigins = [...defaultOrigins, ...envOrigins];
 
 app.use(cors({
   origin: function (origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
+      console.error(`Blocked by CORS: ${origin}`);
       callback(new Error('CORS not allowed for this origin'));
     }
   }
@@ -24,13 +26,13 @@ app.use(cors({
 
 app.use(express.json());
 
-app.listen(5000, () => console.log("Server Running"));
+//Server start
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
+//Email transporter setup
 const contactEmail = nodemailer.createTransport({
   service: 'gmail',
-  host: 'smtp.gmail.com',
-  port: 587,
-  secure: false,
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS
@@ -39,31 +41,35 @@ const contactEmail = nodemailer.createTransport({
 
 contactEmail.verify((error) => {
   if (error) {
-    console.log(error);
+    console.error('Email transporter error:', error);
   } else {
-    console.log("Ready to Send");
+    console.log('Email transporter ready');
   }
 });
 
+//Contact endpoint
 app.post("/api/contact", (req, res) => {
-  const { firstName, lastName, email, message, phone } = req.body;
-  const name = firstName + " " + lastName;
+  const { firstName, lastName, email, phone, message } = req.body;
+  const name = `${firstName} ${lastName}`;
+
   const mail = {
-    from: name,
+    from: process.env.EMAIL_USER,
     to: "tonyincode@gmail.com",
     subject: "Contact Form Submission - Portfolio",
     html: `
-      <p>Name: ${name}</p>
-      <p>Email: ${email}</p>
-      <p>Phone: ${phone}</p>
-      <p>Message: ${message}</p>
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Phone:</strong> ${phone}</p>
+      <p><strong>Message:</strong> ${message}</p>
     `,
   };
+
   contactEmail.sendMail(mail, (error) => {
     if (error) {
-      res.status(500).json({ error });
+      console.error('Send mail error:', error);
+      res.status(500).json({ success: false, message: 'Failed to send message' });
     } else {
-      res.status(200).json({ code: 200, status: "Message Sent" });
+      res.status(200).json({ success: true, message: 'Message sent successfully' });
     }
   });
 });
