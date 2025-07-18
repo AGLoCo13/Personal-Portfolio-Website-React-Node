@@ -3,34 +3,34 @@ const cors = require('cors');
 const nodemailer = require('nodemailer');
 require('dotenv').config();
 
-// server used to send  emails
 const app = express();
 
-//Safer flexible CORS config
+// ✅ Single place for all allowed origins
 const allowedOrigins = [
   'https://tonyincode.com',
-  'https://personal-portfolio-website-react-node-irwue3loy.vercel.app'
-]
+  'https://personal-portfolio-website-react-node-irwue3loy.vercel.app',
+  ...(process.env.CORS_ORIGIN?.split(',') || [])
+];
+
 app.use(cors({
   origin: function (origin, callback) {
-    // allow requests with no origin (like curl or Postman)
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
-      callback(new Error('Not allowed by CORS: ' + origin));
+      callback(new Error('CORS not allowed for this origin'));
     }
-  },
-  methods: ['GET', 'POST'],
-  credentials: true
+  }
 }));
+
 app.use(express.json());
+
 app.listen(5000, () => console.log("Server Running"));
 
 const contactEmail = nodemailer.createTransport({
   service: 'gmail',
   host: 'smtp.gmail.com',
   port: 587,
-  secure: false, //true for 465 , false for other ports
+  secure: false,
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS
@@ -46,24 +46,24 @@ contactEmail.verify((error) => {
 });
 
 app.post("/api/contact", (req, res) => {
-  const name = req.body.firstName + req.body.lastName;
-  const email = req.body.email;
-  const message = req.body.message;
-  const phone = req.body.phone;
+  const { firstName, lastName, email, message, phone } = req.body;
+  const name = firstName + " " + lastName;
   const mail = {
     from: name,
     to: "tonyincode@gmail.com",
     subject: "Contact Form Submission - Portfolio",
-    html: `<p>Name: ${name}</p>
-           <p>Email: ${email}</p>
-           <p>Phone: ${phone}</p>
-           <p>Message: ${message}</p>`,
+    html: `
+      <p>Name: ${name}</p>
+      <p>Email: ${email}</p>
+      <p>Phone: ${phone}</p>
+      <p>Message: ${message}</p>
+    `,
   };
   contactEmail.sendMail(mail, (error) => {
     if (error) {
-      res.json(error);
+      res.status(500).json({ error });
     } else {
-      res.json({ code: 200, status: "Message Sent" });
+      res.status(200).json({ code: 200, status: "Message Sent" });
     }
   });
 });
